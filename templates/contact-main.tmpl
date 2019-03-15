@@ -1,0 +1,33 @@
+{{ define "layout" }}
+  {{ template "header" }}
+<div class="w3-container">
+	<br />
+	<div class="w3-card-4">
+
+		<header class="w3-container secondary-color">
+			<h1>{{ .User }}'s Contact List</h1>
+		</header>
+
+		<div class="w3-container">
+    <table class="w3-table w3-striped w3-bordered">
+      	<tr>
+          <th>Name</th>
+          <th>Email</th>
+					<th>Mobile</th>
+    	</tr>
+      	{{ with .List }}
+			{{ range . }}
+      			<tr>
+              		<td>{{ .Name }}</td>
+									<td>{{ .Email }}</td>
+									<td>{{ .Mobile }}</td>
+      			</tr>
+			{{ end }} 
+      	{{ end }}
+    </table>
+		<br />
+		</div>
+	</div>
+</div>
+  {{ template "footer" }}
+{{ end }}
